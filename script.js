@@ -1,10 +1,10 @@
-let topic = "Politics"
+let topic = "Cricket"
 let parent_div = document.querySelector("#new")
 let btn = document.querySelectorAll(".nav-btn")
 let nav_search = document.querySelector(".nav-search")
 let search = document.querySelector("#search")
-let new_count = 10
-let init_count = new_count + 1;
+let new_count = 15
+
 
 
 
@@ -23,11 +23,11 @@ async function get_data() {
     if (new_count < news_data.articles.length)
 
 
-        for (let i = 0; i <= new_count; i++) {
+        for (let i = new_count - 10; i <= new_count; i++) {
 
             
 
-            if(news_data.articles[i].author === null){
+            if(news_data.articles[i].author === null || news_data.articles[i].title.length > 63 || news_data.articles[i].urlToImage === ""){
                 continue;
             } else{
 
@@ -105,9 +105,17 @@ nav_search.addEventListener("click", () => {
 
         get_data(); // Call the function if the topic is valid
     } else {
-        alert("Daal de kuch bhai"); // Alert if the input is empty or only spaces
+        alert("Please Enter The Topic"); // Alert if the input is empty or only spaces
     }
 });
+
+let load_more = document.querySelector("#load-more")
+
+load_more.addEventListener("click" , () => {
+new_count += 10;
+get_data()
+
+})
 
 
 
