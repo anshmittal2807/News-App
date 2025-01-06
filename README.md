@@ -1,7 +1,7 @@
 # News-AppiveNews: Real-Time News Web App
 
-<h2>LiveNews is a sleek and lightweight web application that delivers real-time news updates by fetching data from a news API. Built using only HTML, CSS, and JavaScript, this app provides a seamless and engaging news-reading experience without requiring any backend services.
-</h2>
+<h4>LiveNews is a sleek and lightweight web application that delivers real-time news updates by fetching data from a news API. Built using only HTML, CSS, and JavaScript, this app provides a seamless and engaging news-reading experience without requiring any backend services.
+</h4>
 
 Key Features:
 <ul>
