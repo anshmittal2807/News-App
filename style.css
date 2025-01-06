@@ -37,8 +37,7 @@ body {
 .exp {
     transition: all 0.2s ease-in;
     margin: 5px;
-    min-height: 65vh;
-    max-height: 75vh;
+    
     width: 30vw;
     background-color: darkgrey;
     border: 2px solid black;
@@ -249,7 +248,7 @@ cursor: pointer;}
 
     .exp {
 
-        height: 40vw;
+        /* height: 40vw; */
     }
   
 }
@@ -263,7 +262,7 @@ cursor: pointer;}
         display: none;
     }
     #search {
-        width: 200vw;
+        width: 150vw;
     }
 #new { 
     display: block;
@@ -272,7 +271,8 @@ cursor: pointer;}
 margin: 0px;
 border-radius: 0px;
     width: 100%;
-    height: 40vw;
+    /* height: 40vw; */
+    border: 1px solid black;
 }
 img {
     width:100%;
@@ -290,10 +290,25 @@ img {
 #wlcm {
     margin-bottom: 15vh;
 }
+.exp:hover {
+
+    scale:1;
+}
 
 
 }
 
 
 
-
+#load-more {
+    position: relative;
+    left: 40%;
+    height: 3rem;
+    width: 8rem;
+    font-size: 1rem;
+    background-color: #1E201E;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
