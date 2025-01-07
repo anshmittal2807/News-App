@@ -1,9 +1,10 @@
-let topic = "Cricket"
+let topic = "cricket"
 let parent_div = document.querySelector("#new")
 let btn = document.querySelectorAll(".nav-btn")
 let nav_search = document.querySelector(".nav-search")
 let search = document.querySelector("#search")
 let new_count = 15
+let load_more = document.querySelector("#load-more")
 
 
 
@@ -27,9 +28,10 @@ async function get_data() {
 
             
 
-            if(news_data.articles[i].author === null || news_data.articles[i].title.length > 63 || news_data.articles[i].urlToImage === ""){
+            if(news_data.articles[i].author === null || news_data.articles[i].title.length > 63){
                 continue;
-            } else{
+            } 
+            else{
 
                 let div = document.createElement("div")
                 div.setAttribute("class", "exp");
@@ -87,8 +89,17 @@ get_data()
 btn.forEach(btns => {
     btns.addEventListener('click', () => {
         parent_div.innerHTML = ""
-        topic = btns.textContent;
-        get_data()
+        parent_div.innerHTML = "";
+
+        topic = btns.textContent
+         // Clear previous results
+
+         load_more.textContent = "Loading.."
+
+        get_data().then(() => {
+
+            load_more.textContent = "Load More"
+        })
     });
 });
 
@@ -101,19 +112,32 @@ nav_search.addEventListener("click", () => {
 
     // Check if the input is not empty
     if (topic !== "") {
-        parent_div.innerHTML = ""; // Clear previous results
+        parent_div.innerHTML = "";
+         // Clear previous results
 
-        get_data(); // Call the function if the topic is valid
+         load_more.textContent = "Loading.."
+
+        get_data().then(() => {
+
+            load_more.textContent = "Load More"
+        })
+        ; // Call the function if the topic is valid
     } else {
         alert("Please Enter The Topic"); // Alert if the input is empty or only spaces
     }
 });
 
-let load_more = document.querySelector("#load-more")
 
 load_more.addEventListener("click" , () => {
 new_count += 10;
-get_data()
+
+load_more.textContent = "Loading"
+get_data().then(() => {
+
+    load_more.textContent = "Load More"
+})
+
+
 
 })
 

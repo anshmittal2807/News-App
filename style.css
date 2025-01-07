@@ -43,12 +43,24 @@ body {
     border: 2px solid black;
     border-radius: 8px;
     cursor: pointer;
-
+    animation: incoming 1s  ease-in-out ;
 }
+ @keyframes incoming {
+    from {
+        margin: 100%;
+       
+    }
+    to {
+        margin: 5px;
+     
+    }
+    
+ }
+
 
 .exp:hover {
 
-    scale:1.1;
+    scale:1.05;
 }
 
 img {
@@ -186,6 +198,7 @@ text-decoration: underline;
     text-align: center;
     margin-left: 10vw;
     margin-top: 15px;
+    margin-bottom: 15px;
     height: 2em;
     padding: 5px;
     cursor: pointer;
@@ -246,10 +259,7 @@ cursor: pointer;}
         display: none;
     }
 
-    .exp {
-
-        /* height: 40vw; */
-    }
+  
   
 }
 
